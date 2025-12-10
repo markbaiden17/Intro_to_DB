@@ -6,8 +6,6 @@ CONFIG = {
     'password': 'AkorfAntAkosM@ns44'
 }
 
-DATABASE_NAME = 'alx_book_store'
-
 def create_database():
     mydb = None
     mycursor = None
@@ -16,10 +14,10 @@ def create_database():
         mydb = mysql.connector.connect(**CONFIG)
         mycursor = mydb.cursor()
 
-        sql_command = f"CREATE DATABASE IF NOT EXISTS {DATABASE_NAME}"
+        sql_command = f"CREATE DATABASE IF NOT EXISTS alx_book_store"
         mycursor.execute(sql_command)
 
-        print(f"Database '{DATABASE_NAME}' created successfully!")
+        print(f"Database 'alx_book_store' created successfully!")
 
     except mysql.connector.Error as err:
         print(f"Error: Failed to connect or execute command.")
